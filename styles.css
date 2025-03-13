@@ -16,7 +16,7 @@ body {
 /* Header Styling */
 header {
     display: flex;
-    justify-content: center; /* Center the title */
+    justify-content: space-between; /* Space between title and menu */
     align-items: center;
     padding: 20px 40px;
     position: relative;
@@ -25,15 +25,19 @@ header {
     width: 100%;
 }
 
-/* Logo Container */
+/* Logo Container - Fixed to the left */
 .logo-container {
-    position: absolute;
-    left: 20px; /* Keep logo in the left corner */
+    position: absolute; /* Keep the logo in the left corner */
+    left: 20px;
 }
 
 /* Logo Styling */
 .logo {
-    height: 60px; /* Logo size */
+    display: block; /* Ensures the image is treated as a block element */
+    max-width: 110px; /* Set a max-width for the icon */
+    max-height: 110px; /* Set a max-height for the icon */
+    width: auto; /* Ensures aspect ratio is maintained */
+    height: auto;
 }
 
 /* Title Container - Centering the Title */
@@ -50,15 +54,17 @@ header {
     color: #000000; /* Black title */
     margin: 0;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-align: center; /* Ensure the text is centered */
 }
 
-/* Navbar Styling - Hide the menu by default */
+/* Navbar Styling - Always show the menu */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: flex-end; /* Push the hamburger menu to the right */
 }
 
+/* Hide Menu by Default */
 .navbar ul {
     display: none; /* Hide the menu items by default */
     list-style: none;
@@ -101,7 +107,7 @@ header {
     margin-bottom: 10px;
 }
 
-/* Banner Styling (Separated Color) */
+/* Banner Styling */
 .banner {
     background-color: #333; /* Dark background for banner */
     color: #FAF3DD; /* Cream text */
