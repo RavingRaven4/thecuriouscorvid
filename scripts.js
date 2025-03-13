@@ -1,5 +1,4 @@
-// Function to reveal hidden content when button is clicked
-document.getElementById('exploreButton').addEventListener('click', function() {
-    const exploreContent = document.getElementById('exploreContent');
-    exploreContent.classList.toggle('hidden'); // Toggle visibility
+// Toggle the hamburger menu on click
+document.getElementById('hamburgerMenu').addEventListener('click', function() {
+    document.querySelector('.navbar').classList.toggle('active');
 });
