@@ -19,56 +19,74 @@ header {
     justify-content: space-between; /* Space between title and menu */
     align-items: center;
     padding: 20px 40px;
-    position: relative;
-    background-color: #FAF3DD; /* Cream color for header */
+    background-color: #FAF3DD; /* Cream color */
     color: black;
     width: 100%;
+    position: relative; /* Ensure navbar items are positioned correctly */
 }
 
-/* Logo Container - Fixed to the left */
+/* Logo Container */
 .logo-container {
-    position: absolute; /* Keep the logo in the left corner */
-    left: 20px;
+    margin-right: 20px;
 }
 
 /* Logo Styling */
 .logo {
-    display: block; /* Ensures the image is treated as a block element */
-    max-width: 110px; /* Set a max-width for the icon */
-    max-height: 110px; /* Set a max-height for the icon */
-    width: auto; /* Ensures aspect ratio is maintained */
+    max-width: 110px;
+    max-height: 110px;
+    width: auto;
     height: auto;
 }
 
-/* Title Container - Centering the Title */
+/* Title Styling */
 .title-container {
-    display: flex;
-    justify-content: center; /* Center the title */
-    flex-grow: 1; /* Ensures title is centered */
+    text-align: center; /* Center title */
+    flex-grow: 1; /* Ensure title is centered */
 }
 
-/* Title Styling */
 .title {
     font-family: 'Amatic SC', cursive; /* Handwritten cursive font */
     font-size: 2.5rem;
-    color: #000000; /* Black title */
+    color: #000000;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     margin: 0;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    text-align: center; /* Ensure the text is centered */
 }
 
-/* Navbar Styling - Always show the menu */
+/* Navbar Styles */
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Push the hamburger menu to the right */
+    position:relative;
 }
 
-/* Hide Menu by Default */
+/* Hide Menu by Default (for small screens) */
 .navbar ul {
     display: none; /* Hide the menu items by default */
     list-style: none;
     gap: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Navbar active state (when hamburger is clicked) */
+/* Add an outline around the dropdown */
+.navbar.active ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #FAF3DD; /* Cream background */
+    padding: 10px;
+    width: 200px;
+    z-index: 100;
+    border: 2px solid #333; /* Dark border around the dropdown */
+    border-radius: 5px; /* Rounded corners */
+}
+
+navbar.active {
+    position: relative;
+}
+
+.navbar.active ul li {
+    margin-bottom: 10px;
 }
 
 .navbar ul li a {
@@ -86,50 +104,66 @@ header {
 
 /* Hamburger Menu - Always Visible */
 .hamburger-menu {
-    display: block; /* Show the hamburger menu */
+    display: block;
     cursor: pointer;
     font-size: 30px;
+    color: #000;
+    z-index: 101;
 }
 
-/* Show menu when hamburger is clicked */
-.navbar.active ul {
-    display: flex; /* Show menu items when active */
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #FAF3DD; /* Keep the cream background */
-    padding: 10px;
-    width: 200px;
-}
-
-.navbar.active ul li {
-    margin-bottom: 10px;
-}
-
-/* Banner Styling */
+/* Banner Section */
 .banner {
-    background-color: #333; /* Dark background for banner */
-    color: #FAF3DD; /* Cream text */
-    padding: 60px 20px; /* Add spacing to create a full-width banner */
+    background-image: url('background_gats.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Darken background */
+    z-index: 1;
 }
 
 .banner h2 {
+    position: relative;
+    z-index: 2;
+    font-family: 'Amatic SC', cursive;
     font-size: 2.5rem;
-    font-family: 'Pacifico', cursive;
-    color: #00d4ff; /* Iridescent cyan accent */
-    margin-bottom: 20px;
+    color: #FAF3DD;
 }
 
-.banner p {
-    font-size: 1.5rem;
-    color: #fff;
-    font-weight: 300;
+/* Main Content */
+main {
+    padding: 40px 20px;
 }
 
-/* Footer */
+/* Section Styling */
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: #000000;
+}
+
+section p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Footer Styling */
 footer {
     background-color: #333;
     color: white;
@@ -139,7 +173,7 @@ footer {
     font-size: 1rem;
 }
 
-/* Smooth button hover */
+/* Button Styling */
 button {
     padding: 12px 24px;
     font-size: 1rem;
@@ -153,4 +187,23 @@ button {
 
 button:hover {
     background-color: #00a3cc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner {
+        height: 200px;
+    }
+
+    .banner h2 {
+        font-size: 1.8rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    section p {
+        font-size: 1.1rem;
+    }
 }
