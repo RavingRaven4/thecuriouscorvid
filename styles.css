@@ -177,7 +177,7 @@ footer {
 button {
     padding: 12px 24px;
     font-size: 1rem;
-    background-color: #00d4ff;
+    background-color: #4B006E;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -186,8 +186,40 @@ button {
 }
 
 button:hover {
-    background-color: #00a3cc;
+    background-color: #4B006E;
 }
+
+/* Styling for the About page */
+.about-content {
+    padding: 30px;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Styling for Don't Touch This page */
+.dontdoit-content {
+    padding: 30px;
+    text-align: center;
+}
+
+.dontdoit-content h2 {
+    font-size: 2rem;
+}
+
+.dontdoit-content p {
+    font-size: 1.5rem;
+    color: #000;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
