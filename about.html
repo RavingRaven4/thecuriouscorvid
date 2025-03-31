@@ -6,27 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Corvid's Corner</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="images/raven_icon.png" alt="Logo" class="logo">
-        </div>
-        <div class="title-container">
-            <h1 class="title">The Curious Corvid</h1>
-        </div>
-        <nav class="navbar">
-            <ul id="menu-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="dontdoit.html">Don't click this.</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("header.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("header").innerHTML = data;
+    
+                    // ✅ Ensure the hamburger menu works after the header loads
+                    setupHamburgerMenu();
+                })
+                .catch(error => console.error("Error loading header:", error));
+        });
+    
+        function setupHamburgerMenu() {
+            const hamburgerMenu = document.getElementById("hamburgerMenu");
+            const navbar = document.querySelector(".navbar");
+    
+            if (hamburgerMenu && navbar) {
+                hamburgerMenu.addEventListener("click", () => {
+                    navbar.classList.toggle("active");
+                });
+            } else {
+                console.warn("Hamburger menu or navbar not found.");
+            }
+        }
+    </script>
+    
+    <section class="banner">
+        <h2>About</h2>
+    </section>
+
 
     <section class="about-content">
-        <h2>About Us</h2>
-        <p>Welcome to Corvid's Corner, a space where curiosity and discovery meet. Here, we explore everything from philosophy to travel, with a touch of humor and a lot of heart.</p>
+        <p>Welcome to Corvid's Corner, a space where curiosity and discovery meet. Here, we explore everything from philosophy to travel, with a touch of spice and a lot of heart.</p>
+        <p></p>
         <p>Join us as we delve into the unknown and share our adventures!</p>
     </section>
 
