@@ -220,6 +220,43 @@ button:hover {
     color: #000;
 }
 
+/* Update Section Styling */
+#updates-container {
+    margin-top: 30px;
+}
+
+/* Styling for each individual update */
+.update {
+    margin-bottom: 20px; /* Adds space between each blog post */
+    padding: 15px;
+    background-color: #f8f8f8; /* Light gray background */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px;
+}
+
+/* Styling for the update date */
+.update-date {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #888;
+    margin-bottom: 5px; /* Adds space between date and title */
+}
+
+/* Styling for the update title */
+.update-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px; /* Adds space between title and text */
+}
+
+/* Styling for the update content */
+.update-text {
+    font-size: 1.2rem;
+    color: #444;
+    margin-top: 10px; /* Adds space above the text */
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
